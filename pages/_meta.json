@@ -14,7 +14,7 @@
     "type": "separator",
     "title": "Features"
   },
-  "css_partials" : "CSS Partials",
+  "scss_partials" : "SCSS Partials",
   "shortcodes" : "Shortcodes",
   "external_url" : "Run Snippets using an External URL",
   "functionality_plugin" : "The Functionality Plugin (Experimental)",
@@ -24,5 +24,5 @@
     "title": "Troubleshooting"
   },
 
-  "safe_mode" : "Safe Mode"
+  "safe_mode" : "What to do if a snippet throws an error"
 }

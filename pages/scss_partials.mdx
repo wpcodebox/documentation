@@ -1,0 +1,29 @@
+Using SCSS Partials in WPCodeBox
+--------------------------------
+
+WPCodeBox supports the use of SCSS partials, which can help you to better organize your CSS code and make it more reusable.
+
+### Creating a SCSS Partial
+
+To create a SCSS partial in WPCodeBox, you can simply create a new SCSS snippet with a filename that starts with an underscore (_), followed by the name of your partial. For example, if you wanted to create a partial for your typography styles, you might name your file "_typography.scss".
+
+When you save your new SCSS snippet, WPCodeBox will automatically rename the file to "_partial_name.scss" to conform to SCSS naming conventions.
+
+### Importing SCSS Partials
+
+To use a SCSS partial in another snippet, you can use the `@use` directive followed by the filename of the partial in single quotes. For example, to import the "_typography.scss" partial, you would write:
+
+```scss
+@use '_typography';
+```
+**Important:** Note that you must use single quotes around the filename.
+
+### Autocomplete for SCSS Partials
+
+To help you easily import SCSS partials in your snippets, WPCodeBox provides an autocomplete feature. When you type `@use` in a new snippet, you can press `ctrl + space` to open the autocomplete menu, which will display a list of available partials.
+
+### Limitations
+
+Currently, there are some limitations to using SCSS partials in WPCodeBox. You cannot use nested partials, and you cannot `@use` a partial that `@uses` another partial. However, WPCodeBox is constantly improving and updating, so these limitations may be resolved in future updates.
+
+By using SCSS partials in WPCodeBox, you can help to make your CSS code more modular, reusable, and easier to maintain.
