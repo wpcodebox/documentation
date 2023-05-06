@@ -1,15 +1,28 @@
 {
   "index": "Introduction",
-  "another": "Another Page",
-  "advanced": "Advanced (A Folder)",
-  "about": {
-    "title": "About",
-    "type": "page"
+  "migrating" : "Migrating from v1",
+  "--getting_started": {
+    "type": "separator",
+    "title": "Getting Started"
   },
-  "contact": {
-    "title": "Contact ↗",
-    "type": "page",
-    "href": "https://twitter.com/shuding_",
-    "newWindow": true
-  }
+  "installation": "Installation",
+  "plugin_settings": "Plugin Settings",
+  "snippet_settings" : "Snippet Settings",
+  "cloud": "Save Code Snippets to the Cloud",
+
+  "--features": {
+    "type": "separator",
+    "title": "Features"
+  },
+  "css_partials" : "CSS Partials",
+  "shortcodes" : "Shortcodes",
+  "external_url" : "Run Snippets using an External URL",
+  "functionality_plugin" : "The Functionality Plugin (Experimental)",
+
+  "--troubleshooting": {
+    "type": "separator",
+    "title": "Troubleshooting"
+  },
+
+  "safe_mode" : "Safe Mode"
 }
