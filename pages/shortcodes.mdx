@@ -1,2 +1,32 @@
-Shortcodes
-============
+# Running PHP/HTML Snippets using Shortcodes in WPCodeBox
+
+WPCodeBox is a WordPress code snippet manager that allows you to easily manage and use code snippets on your website. With the latest version of WPCodeBox, you can now run PHP/HTML snippets using shortcodes.
+
+## How to Use Shortcodes for PHP/HTML Snippets
+
+To use shortcodes for your PHP/HTML snippets, follow these steps:
+
+1\. Click on "Add New Snippet" in the WPCodeBox dashboard.
+
+2\. In the "Snippet Settings" section, select "Shortcode" as the "Where to insert the snippet" option.
+
+3\. In the "Shortcode name" field, enter the shortcode name you want to use for this snippet. This name can be anything you want, but it should be unique and easy to remember.
+
+4\. Enter your PHP/HTML code in the "Snippet Code" section.
+
+5\. Click "Save Changes" to save your new snippet.
+
+Once your snippet is saved, you can use it on any page or post on your WordPress site by using the shortcode you defined in the "Shortcode name" field. For example, if your shortcode name is "my_snippet", you can use it on a page or post by adding the following shortcode:
+
+```
+
+[my_snippet]
+
+```
+
+When you publish the page or post, the shortcode will be replaced with the PHP/HTML code from your snippet.
+
+## Automatic PHP Output Capturing
+
+One important thing to note is that PHP output is automatically captured when using shortcodes in WPCodeBox. This means that you don't need to use the "return" statement in your PHP code to output the results of your code. Instead, you can use the "echo" statement or any other method to output your code, and it will be captured by the shortcode.
+

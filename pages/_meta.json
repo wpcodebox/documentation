@@ -24,5 +24,11 @@
     "title": "Troubleshooting"
   },
 
-  "safe_mode" : "What to do if a snippet throws an error"
+  "safe_mode" : "What to do if a snippet throws an error",
+  "get_wpcodebox": {
+    "title": "Get WPCodeBox",
+    "type": "page",
+    "href": "https://wpcodebox.com",
+    "newWindow": true
+  }
 }

@@ -1,35 +1,82 @@
+import { Callout } from 'nextra-theme-docs'
+import Image from 'next/image'
+import { Steps } from 'nextra-theme-docs'
+
 # Upgrading to WPCodeBox 2.0: What You Need to Know
 
-If you've been using WPCodeBox to manage code snippets on your WordPress site, you might have noticed that a major update has been released. WPCodeBox 2.0 is now available, and it brings with it a host of new features and improvements. However, upgrading to the new version requires some manual work. Here's what you need to know to make the transition smoothly.
+`If you've been using WPCodeBox to manage code snippets on your WordPress site, you might have noticed that a major update has been released. WPCodeBox 2.0 is now available, and it brings with it a host of new features and improvements. However, upgrading to the new version requires some manual work. Here's what you need to know to make the transition smoothly.
 
 ## Installation and Activation
 
-First things first: WPCodeBox 2.0 is a separate plugin from the original WPCodeBox. This means that you'll need to install the new plugin separately, and it won't automatically replace the old one. You can download WPCodeBox 2.0 from the WordPress plugin repository or from the WPCodeBox website.
+First things first: WPCodeBox 2.0 is a separate plugin from the original WPCodeBox.
+This means that you'll need to install the new plugin separately, and it won't automatically replace the old one.
+You can download WPCodeBox 2.0 from the WordPress plugin repository or from the WPCodeBox website.
 
-Once you've installed WPCodeBox 2.0, you'll need to migrate your code snippets from the old plugin to the new one. Unfortunately, this can't be done automatically, as the two plugins have different database structures. You'll need to manually copy your snippets from the old plugin to the new one.
+Once you've installed WPCodeBox 2.0, you'll need to migrate your code snippets from the old plugin to the new one.
+Unfortunately, this can't be done automatically, as the two plugins have different database structures.
+You'll need to manually copy your snippets from the old plugin to the new one.
 
 ## Migration Steps
 
 To do this, follow these steps:
+<Steps>
+### Download
+Download WPCodeBox 2.0 from your WPCodeBox account page.
+### Backup
+Make sure you have a backup of your WordPress site, just in case something goes wrong during the update.
+### Install WPCodeBox 2
+Install and activate the new WPCodeBox 2.0 plugin.
+### Move your code snippets
+Move your code snippets from v1 to v2.
+### Delete v1
+Once you know everything works, delete all your V1 snippets and deactivate and delete the old plugin.
+</Steps>
+<Callout emoji="⚠️" type="warning">
+Make sure you don't have the same snippet active in both WPCodeBox v1 and WPCodeBox 2. This could lead to errors.
+**Deactivate a snippet in WPCodeBox 1 before activating it in WPCodeBox 2.**
+</Callout>
 
-1\. Make sure you have a backup of your WordPress site, just in case something goes wrong during the migration.
+## Moving Your Code Snippets
 
-2\. Deactivate the old WPCodeBox plugin.
+Once you have both plugins installed, you can start moving your code snippets to the new version. You could do this using the cloud or manually.
 
-3\. Activate the new WPCodeBox 2.0 plugin.
+## Things to consider when migrating to WPCodeBox 2
 
-4\. In the WPCodeBox 2.0 settings menu, click on the "Import" tab.
+## New Hook Options
 
-5\. Select the "WPCodeBox 1.x" option and click the "Import" button.
+One of the main changes in WPCodeBox 2.0 is the introduction of more hook options.
+Instead of using conditions to execute snippets, you can now use hooks to specify where and when the snippets should run.
+This means that you can use hooks such as 'admin_init' instead of selecting the condition 'Location is admin'.
 
-6\. Wait for the import process to finish. This may take some time if you have a lot of snippets.
+The advantage of using hooks is that these settings are saved to the cloud, which means you don't have to worry about losing
+your settings when you download the code snippet to another site. **Using hooks is also faster than using conditions, so this should be preferred.**
 
-7\. Once the import is complete, verify that all of your snippets have been migrated correctly.
 
-8\. If everything looks good, you can safely delete the old WPCodeBox plugin.
 
-It's worth noting that some features of WPCodeBox may have changed in the new version. Take some time to explore the new settings and options to make sure you're taking full advantage of what WPCodeBox 2.0 has to offer.
+## Migrating CSS/SCSS/HTML/JS snippets
 
-## Conclusion
+WPCodeBox v1 had basic options to allow you to select where to load your CSS/SCSS/HTML/JS snippets. WPCodeBox 2 improves this by allowing you to select multiple insert locations for each snippet.Callout
+While this is a great improvement, it means that you'll need to manually select the insert locations for each snippet when you migrate to WPCodeBox 2.0.
 
-In conclusion, upgrading to WPCodeBox 2.0 is a manual process, but it's well worth the effort. The new version brings significant improvements and features, and once you've migrated your snippets, you'll be able to enjoy a more powerful and streamlined code management experience on your WordPress site.
+Here are a few examples of how to update your snippet settings:
+
+WPCodeBox v1             |  WPCodeBox v2
+:-------------------------:|:-------------------------:
+<Image src="/images/wpcodebox1_settings.png" width="220" height="1142"/>  |  <Image src="/images/wpcodebox2_settings.png" width="220" height="1142"/>
+
+If you use WooCommerce, you'll also see WooCommerce-related hooks in the list of hooks. These are useful for inserting HTML snippets at specific locations on your WooCommerce pages.
+
+## Migrating PHP snippets
+
+WPCodeBox v2 changes the default location that PHP snippets run to plugins_loaded. This will make it compatible with
+more plugins and themes. However, if you have PHP snippets that rely on the old location, you'll need to update them.
+WPCodeBox v1             |  WPCodeBox v2
+:-------------------------:|:-------------------------:
+<Image src="/images/wpcodebox_1_php_settings.png" width="220" height="1142"/>  |  <Image src="/images/wpcodebox_2_php_settings.png" width="220" height="1142"/>
+
+### New things you can do to render PHP Snippets
+
+In WPCodeBox v1 you had to use conditions if you wanted to render a snippet only on the backend or on the frontend, for examples. Now you can achieve the same with hooks.
+If you want a snippet to run only on the frontend you could select the 'wp' action, or the 'admin_init' action if you want it to run only on the backend.
+
+<Image src="/images/admin_init_example.png" width="309" height="221"/>
