@@ -8,6 +8,12 @@ const config: DocsThemeConfig = {
   footer: {
     text: 'WPCodeBox Documentation',
   },
+
+  useNextSeoProps() {
+    return {
+      titleTemplate: '%s – WPCodeBox Documentation',
+    }
+  }
 }
 
 export default config
