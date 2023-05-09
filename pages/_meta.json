@@ -15,6 +15,7 @@
     "title": "Features"
   },
   "scss_partials" : "SCSS Partials",
+  "editor" : "Code Editor",
   "shortcodes" : "Shortcodes",
   "external_url" : "Run Snippets using an External URL",
   "functionality_plugin" : "The Functionality Plugin (Experimental)",
