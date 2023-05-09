@@ -31,5 +31,12 @@
     "type": "page",
     "href": "https://wpcodebox.com",
     "newWindow": true
+  },
+
+  "v1_docs": {
+    "title": "WPCodeBox v1 Documentation",
+    "type": "page",
+    "href": "https://wpcodebox.com/documentation",
+    "newWindow": true
   }
 }
