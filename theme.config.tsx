@@ -12,7 +12,11 @@ const config: DocsThemeConfig = {
       <>
         <meta property="og:title" content="WPCodeBox 2 Documentation" />
         <meta property="og:description" content="WPCodeBox 2 Documentation" />
-      </>
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon.svg"/>
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon.svg"/>
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon.svg"/>
+
+          </>
   ),
   useNextSeoProps() {
     return {
