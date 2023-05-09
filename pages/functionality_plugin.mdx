@@ -3,30 +3,13 @@ import { Callout } from 'nextra-theme-docs'
 # WPCodeBox Functionality Plugin
 
 <Callout type="error" emoji="️🚫">
-This is an experimental feature. Please use with care.
+**Note:** This is an experimental feature. Please use with care.
 </Callout>
-**Note: The functionality plugin feature is currently experimental and should be used with caution.**
 
 WPCodeBox's functionality plugin feature allows users to save their code snippets to a plugin that is different from the main WPCodeBox plugin. This can be useful for performance improvements and when handing off a site to a client, as it allows the user to disable WPCodeBox and keep the functionality of the snippets.
 
-To use this feature, navigate to the WPCodeBox settings page and find the "Functionality Plugin" option. Here, you can select a plugin where you want to save your snippets. If you don't have a functionality plugin, you can create a new one by clicking on the "Create new functionality plugin" button.
+To use this feature, navigate to the WPCodeBox settings page and find the "Functionality Plugin" option. Here, you can enable the Functionality Plugin option.
 
-Once you have selected a functionality plugin, you can save your snippets to it by checking the "Save to functionality plugin" checkbox when creating or editing a snippet. This will save the snippet to the functionality plugin instead of the WPCodeBox plugin.
-
-**Note: Only snippets saved with the "Save to functionality plugin" option will be saved to the functionality plugin.**
+Once you enabled the functionality plugin, you will see a "WPCodeBox Functionality Plugin" in your plugins list. That's where your code snippets will run from. Disabling WPCodeBox won't disable your snippets.
 
 To disable WPCodeBox and keep the functionality of the snippets, simply deactivate the WPCodeBox plugin. The functionality plugin will still contain all the saved snippets and they will continue to work as expected.
-
-**Note: When using a functionality plugin, it is important to keep it up to date and ensure that it is compatible with your version of WordPress and other plugins.**
-
-## Limitations
-
-The functionality plugin feature is currently experimental and has some limitations that should be taken into consideration:
-
-- Only PHP snippets can be saved to a functionality plugin.
-
-- Snippets that use WordPress hooks (e.g. `add_action`, `add_filter`) may require modifications to work correctly when saved to a functionality plugin.
-
-- Saving snippets to a functionality plugin may not work with all plugins and themes, especially those that rely heavily on hooks and filters.
-
-- WPCodeBox cannot manage or update functionality plugins, so it is up to the user to ensure that they are kept up to date and compatible with their WordPress installation.
