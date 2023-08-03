@@ -3,7 +3,7 @@ import {DocsThemeConfig} from 'nextra-theme-docs'
 
 
 const config: DocsThemeConfig = {
-    logo: <span>WPCodeBox 2 Documentation</span>,
+    logo: <div style={{display: "flex", alignItems: "center", fontWeight: 600}}><img src={'/favicon.svg'} style={{width: 38, marginRight: 10}} />WPCodeBox 2 Documentation</div>,
     project: {
         link: 'https://github.com/wpcodebox/documentation'
     },
