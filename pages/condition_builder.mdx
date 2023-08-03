@@ -1,0 +1,98 @@
+Condition Builder
+=================
+
+The WPCodeBox condition builder allows you to set where and when Code Snippets execute on your WordPress Site.
+
+To open the condition builder, you need to set the "Where to run" option of a code snippet to "Custom", and then the "Open Condition Builder" button will appear.
+
+-   ![](https://wpcodebox.b-cdn.net/wp-content/uploads/2022/05/custom.png)
+
+-   ![](https://wpcodebox.b-cdn.net/wp-content/uploads/2022/05/open_condition_builder.png)
+
+Condition Building Blocks
+-------------------------
+
+### Condition
+
+A condition can be true or false. If you add multiple conditions, they must all be true. Condition groups can be true individually.
+
+### Condition Group
+
+A condition group consists of more conditions. The conditions in a group are separated by an "AND" logical operator.
+
+Groups are separated by the "OR" logical operator.
+
+As you add conditions or condition groups, you will see an overview on the right side that shows the logical composition of your conditions.
+
+Types of conditions
+-------------------
+
+### Location
+
+The location condition has three options: Everywhere, Admin and Frontend.
+
+-   Everywhere - will run the snippet everywhere
+-   Admin - Will load the snippet in the Admin Area
+-   Frontend - Will only load the snippet on the Frontend
+
+### Current Post
+
+This condition allows you to select one or more posts on which the snippet to run or not to run. If you choose "Is", the snippet will only run for the selected posts. If you select "Is Not", the snippet will not run on the selected posts.
+
+### Current Post Type 
+
+This condition works the same as the "Current Post" condition, but it will work for all post types, not only individual posts.
+
+### Current Post Parent 
+
+This condition works the same as the "Current Post" condition, but you can select the snippet to run only for children's posts of a specific post.
+
+### Taxonomy
+
+The taxonomy condition is helpful when you want to set a snippet to only run for posts that belong or do not belong to specific categories, tags, or other taxonomies.
+
+### Custom PHP Condition
+
+Custom PHP Conditions are a powerful tool for creating your custom conditions.
+
+You can use [WordPress Conditional Tags](https://codex.wordpress.org/Conditional_Tags) here, and you can compose them using && (and) or || (or).
+
+An example of a custom PHP condition is this:
+
+```
+<?php
+
+is_tax( 'flavor' ) || is_tax('taste');
+```
+
+This condition will run on archive pages for the 'flavor' and 'taste' taxonomies.
+
+Another example could be:
+
+```
+<?php
+
+is_singular() && has_excerpt();
+```
+
+This condition will execute the snippet only if we are on a single page, post, etc., and that post has an excerpt.
+
+The PHP conditions are effective in creating your custom conditions. They also can be used alongside the other conditions available and can be included in condition groups.
+
+### Page URL
+
+The page URL condition allows you only to run a code snippet if the current page URL contains or doesn't contain a particular string in the page URL.
+
+### Current Logged In User
+
+This condition allows you to run a code snippet if the currently logged-in user has or does not have a particular role.
+
+For example, you can run the snippet if the current user is an admin or is not an admin or customer.
+
+### Time
+
+The time condition allows you to select a time before or after the snippet will run. The time condition is helpful if you want particular banners to appear only before or after a specific date.
+
+### Day Of The Week
+
+This condition allows you to only run the current snippet on specific weekdays. So, for example, you can show a banner that the store is open only from Monday to Friday.

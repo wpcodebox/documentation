@@ -1,38 +1,56 @@
 {
-  "index": "Introduction",
-  "migrating" : "Migrating from v1",
+  "index": "Home",
+  "migrating": "Migrating from v1",
   "--getting_started": {
     "type": "separator",
     "title": "Getting Started"
   },
   "installation": "Installation",
+  "wpcodebox_ui" : "WPCodeBox UI",
   "plugin_settings": "Plugin Settings",
-  "snippet_settings" : "Snippet Settings",
+  "snippet_settings": "Snippet Settings",
   "cloud": "Save Code Snippets to the Cloud",
-
+  "add_php_code": "Add PHP Code Snippets to your WordPress site",
+  "download_code": "Download a Code Snippet from the Repository",
+  "how_to_run_a_wordpress_code_snippet": "How to run a WordPress code snippet",
+  "condition_builder": "The Condition Builder",
+  "snippet_types": "Snippet types and how to select the right one",
   "--features": {
     "type": "separator",
     "title": "Features"
   },
-  "scss_partials" : "SCSS Partials",
-  "editor" : "Code Editor",
-  "shortcodes" : "Shortcodes",
-  "external_url" : "Run Snippets using an External URL",
-  "functionality_plugin" : "The Functionality Plugin (Experimental)",
+  "scss_partials": "SCSS Partials",
+  "editor": "Code Editor",
+  "shortcodes": "Shortcodes",
+  "external_url": "Run Snippets using an External URL",
+  "functionality_plugin": "The Functionality Plugin (Experimental)",
+  "cloud_storage": "Cloud Storage for WordPress Code Snippets",
+  "css_dev_mode": "CSS Dev Mode",
+  "code_snippets_repository": "The WordPress Code Snippets Repository",
+  "--howtos": {
+    "type": "separator",
+    "title": "How To's"
+  },
+  "google_tag_manager": "Add Google Tag Manager to WordPress",
+  "acf_options_pages": "Add an ACF Options Page",
+  "display_acf_field_in_a_shortcode" : "Display an ACF Field in a Shortcode",
+  "target_oxygen_builder": "How to target the Oxygen Builder UI using the Condition Builder",
 
   "--troubleshooting": {
     "type": "separator",
     "title": "Troubleshooting"
   },
-
-  "safe_mode" : "What to do if a snippet throws an error",
+  "safe_mode": "A snippet throws an error",
+  "cant_load_cloud_snippets": "Cloud snippets won't load",
+  "snippet_doesnt_run": "My snippet doesn't run",
+  "common_errors": "Common Notices, Warnings and Errors",
+  "ui_wont_load": "WPCodeBox UI won't load",
   "get_wpcodebox": {
     "title": "Get WPCodeBox",
     "type": "page",
     "href": "https://wpcodebox.com",
     "newWindow": true
   },
-
   "v1_docs": {
     "title": "WPCodeBox v1 Documentation",
     "type": "page",

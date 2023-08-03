@@ -1,0 +1,130 @@
+import { Callout } from 'nextra-theme-docs'
+
+# Snippet Types and how to select the right one
+
+WPCodeBox, the WordPress Code Snippets Manager, offers a comprehensive range of supported snippet types to enhance the functionality and design of your WordPress website. This documentation page aims to guide users in choosing the appropriate snippet type for their specific needs. WPCodeBox supports the following snippet types:
+
+1. **PHP Snippets**
+
+**Description:** PHP snippets allow you to inject custom PHP code directly into your WordPress website. This powerful snippet type enables you to extend the functionality of your themes or plugins without the need to modify their core files.
+
+**When to Use:**
+- **Custom Functions:** Define custom PHP functions or modify existing ones to tailor your website to specific requirements.
+- **Database Queries:** Execute custom database queries to retrieve or update data.
+- **Conditional Logic:** Implement conditional statements and logic to control various aspects of your site dynamically.
+
+**Example:**
+```php
+function custom_hello_message() {
+    echo "Hello, World!";
+}
+add_action('wp_footer', 'custom_hello_message');
+   ```
+
+2. **CSS Snippets**
+
+**Description:** CSS snippets allow you to apply custom styles to elements on your WordPress site. With this snippet type, you can easily personalize the appearance and layout of your website without directly editing theme files.
+
+**When to Use:**
+- **Styling Overrides:** Override existing styles and apply your own custom styles to specific elements.
+- **Responsive Design:** Implement responsive design changes to adapt your site's layout across different devices.
+- **Animation and Effects:** Add animations or other visual effects to enhance user experience.
+
+**Example:**
+```css
+/* Customize the header background color */
+.site-header {
+    background-color: #f2f2f2;
+}
+
+/* Increase the font size of post titles */
+.entry-title {
+    font-size: 24px;
+}
+   ```
+
+3. **SCSS/LESS Snippets**
+
+**Description:** SCSS/LESS snippets are used for more advanced CSS styling. They support the SCSS (Sass) and LESS preprocessors, which offer additional features like variables, nesting, and mixins to make your stylesheets more maintainable and organized.
+
+**When to Use:**
+- **Complex Styling:** When dealing with intricate and extensive CSS styling, SCSS/LESS provide a more organized approach.
+- **Code Reusability:** Utilize variables and mixins to reuse code and maintain consistency in your styles.
+
+**Example (SCSS):**
+```scss
+$primary-color: #007bff;
+
+.button {
+    background-color: $primary-color;
+    color: white;
+    padding: 10px 20px;
+}
+   ```
+
+4. **JavaScript (JS) Snippets**
+
+**Description:** JavaScript snippets enable you to add custom client-side scripts to your WordPress website. By leveraging JS snippets, you can introduce interactive features and dynamic behavior to your site.
+
+**When to Use:**
+- **User Interaction:** Implement features such as dropdown menus, sliders, and pop-up modals for improved user engagement.
+- **Form Validation:** Validate user input in forms before submission to ensure data accuracy.
+- **AJAX Requests:** Make asynchronous requests to the server for smoother user experience.
+
+**Example:**
+```javascript
+// Display an alert when the page finishes loading
+document.addEventListener('DOMContentLoaded', function() {
+    alert('Welcome to our website!');
+});
+
+// AJAX request example
+document.getElementById('load-more-button').addEventListener('click', function() {
+    // Your AJAX request code here
+});
+```
+<Callout type="info" emoji="️ℹ️">
+    If your snippet has script tags in it, like {'<script></script>'} or {'<script type="text/javascript"></script>'}, or {'<script src="https://example.com/script.js"><script>'} then you should use the HTML snippet type.
+</Callout>
+
+5. **HTML Snippets**
+
+**Description:** HTML snippets allow you to add custom HTML code to your WordPress website. They are particularly useful for adding custom elements, forms, or structuring content.
+
+**When to Use:**
+- **Custom Elements:** Add unique elements or components not natively supported by WordPress.
+- **Custom Forms:** Implement specialized forms or UI elements.
+
+**Example:**
+```html
+<div class="custom-banner">
+    <h2>Welcome to Our Website!</h2>
+    <p>Discover amazing products and services.</p>
+</div>
+   ```
+
+6. **TXT Snippets**
+
+**Description:** TXT snippets are used for notes and other non-executable content. They are purely for informational purposes and do not affect the functionality of your website.
+
+**When to Use:**
+- **Documentation:** Add notes, explanations, or documentation for your code snippets.
+- **Code Organization:** Use TXT snippets to provide context or label specific sections of your snippets.
+
+**Example:**
+```
+// This snippet customizes the footer style.
+// Note: Make sure to clear cache after making changes.
+   ```
+
+## Choosing the Right Snippet Type
+
+When selecting the appropriate snippet type in WPCodeBox, consider the specific functionality or changes you want to achieve. Here are some key points to keep in mind:
+
+- **Functionality:** For adding or modifying PHP functions, go with PHP snippets.
+- **Styling:** For custom CSS styles, use CSS or SCSS/LESS snippets depending on your project's complexity.
+- **Interactivity:** If you require dynamic behavior or interactive features, opt for JavaScript (JS) snippets.
+- **HTML Structure:** When adding custom HTML elements or forms, choose HTML snippets.
+- **Documentation and Notes:** For non-executable content, use TXT snippets to provide explanations or context for your code.
+
+By choosing the right snippet type for each scenario, you can efficiently manage and execute custom code within your WordPress website using WPCodeBox. Enjoy the flexibility and possibilities that these snippets bring to your WordPress development journey!

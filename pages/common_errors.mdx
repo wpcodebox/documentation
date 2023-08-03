@@ -1,0 +1,195 @@
+When writing Code Snippets, you may encounter some common notices, warnings, and errors. This page lists the most common ones and how to fix them.
+While notices and warning won't prevent your snippets from working, they can be useful for debugging and improving your snippets.
+Errors will prevent your snippets from working, so it's important to fix them as soon as possible.
+
+## Common Notices
+
+### Trying to access array offset on value of type null
+In WordPress, a common scenario that might cause a notice is when you try to access an array index or object property that doesn't exist. Here's an example of PHP code that could potentially cause a notice in WordPress:
+
+```php
+function get_post_title() {
+// Get the post object
+$post = get_post();
+
+    // Access the post title
+    $title = $post['post_title']; // This line may cause a notice
+
+    return $title;
+}
+```
+
+In this example, the `get_post()` function returns a post object, and we are trying to access the `post_title` property using array notation (`$post['post_title']`). However, in WordPress, the `get_post()` function returns an object, not an array. So, attempting to access the `post_title` property using array notation will trigger a notice similar to:
+
+```
+Notice: Trying to access array offset on value of type null in /path/to/your-file.php on line X
+```
+To fix this issue and prevent the notice, you should use object notation instead:
+
+```
+function get_post_title() {
+// Get the post object
+$post = get_post();
+
+    // Access the post title using object notation
+    $title = $post->post_title;
+
+    return $title;
+}
+```
+
+By using `$post->post_title`, we correctly access the `post_title` property of the post object without causing any notices.
+
+Notices are helpful for debugging and identifying potential issues in your code. It's always a good practice to handle them properly and ensure your code runs without generating any notices or warnings.
+
+## Common Warnings
+
+### Trying to access array offset on value of type
+Here's an example of WordPress PHP code that might trigger a warning when accessing an offset of an array:
+
+```php
+
+function get_post_meta_value($meta_key) {
+
+    // Get the post ID
+    $post_id = get_the_ID();
+    
+    // Get the post meta data as an array
+    $meta_data = get_post_meta($post_id, 'my_custom_field', true);
+    
+    // Access a specific meta value using an offset that may cause a warning
+    $meta_value = $meta_data['some_key']; // This line may trigger a warning
+    
+    return $meta_value;
+
+}
+
+```
+
+In this example, we are trying to retrieve a specific value from post meta data using array notation (`$meta_data['some_key']`). However, if the 'some_key' does not exist in the `$meta_data` array, it will trigger a warning similar to:
+
+```
+Warning: Illegal string offset 'some_key' in /path/to/your-file.php on line X
+```
+
+To handle this situation and avoid the warning, you should first check if the key exists in the array before accessing it:
+
+```php
+
+function get_post_meta_value($meta_key) {
+
+    // Get the post ID
+    $post_id = get_the_ID();
+    
+    // Get the post meta data as an array
+    $meta_data = get_post_meta($post_id, 'my_custom_field', true);
+    
+    // Check if the key exists in the array before accessing it
+    $meta_value = isset($meta_data['some_key']) ? $meta_data['some_key'] : '';
+    
+    return $meta_value;
+
+}
+
+```
+
+By using `isset()` to check if the key 'some_key' exists in the `$meta_data` array, we can prevent the warning and provide a default value (in this case, an empty string) if the key is not found.
+
+### Warning: Invalid argument supplied for foreach
+Here's an example of WordPress PHP code that might trigger a warning when using `foreach` with the wrong argument passed:
+
+```php
+function print_post_titles($post_ids) {
+    // Ensure we have an array of post IDs
+    if (!is_array($post_ids)) {
+        // Trigger a warning if the argument is not an array
+        foreach ($post_ids as $post_id) {
+            $post_title = get_the_title($post_id);
+            echo $post_title . '<br>';
+        }
+    }
+}
+```
+
+In this example, the `print_post_titles()` function is intended to print the titles of posts given an array of post IDs as the argument. However, if the function is called with something other than an array (e.g., a single post ID), it will trigger a warning similar to:
+
+```
+Warning: Invalid argument supplied for foreach() in /path/to/your-file.php on line X
+```
+
+To handle this situation and avoid the warning, you should check if the `$post_ids` argument is an array before using `foreach`:
+
+```php
+function print_post_titles($post_ids) {
+    // Ensure we have an array of post IDs
+    if (is_array($post_ids)) {
+        foreach ($post_ids as $post_id) {
+            $post_title = get_the_title($post_id);
+            echo $post_title . '<br>';
+        }
+    }
+}
+```
+
+By using `is_array()` to check if `$post_ids` is indeed an array, we prevent the warning from being triggered when the function is called with a single post ID or any other non-array argument.
+
+Handling warnings properly is crucial for maintaining a stable and reliable WordPress website. Always ensure that your functions are designed to handle different types of input and avoid triggering warnings when possible.
+
+
+Handling warnings properly is essential for maintaining a stable and error-free WordPress website. Always ensure that you handle potential warning situations in your code to provide a smooth user experience.
+
+## Common Errors
+
+### Cannot use object of type WP_Post as an array
+Here's an example that triggers an error and the corresponding solution:
+
+Example Code (Triggering an Error):
+
+```php
+function get_post_title_by_id($post_id) {
+    $post = get_post($post_id);
+    $title = $post['post_title']; // This line will trigger an error
+    return $title;
+}
+
+// Call the function with a non-existent post ID (causing an error)
+$post_title = get_post_title_by_id(9999);
+echo $post_title;
+```
+
+In this example, the `get_post_title_by_id()` function takes a `$post_id` as an argument and attempts to retrieve the post title by accessing the `'post_title'` property using array notation (`$post['post_title']`). However, the `get_post()` function returns an object, not an array. So, trying to access the `'post_title'` property using array notation will trigger an error similar to:
+
+```
+Fatal error: Uncaught Error: Cannot use object of type WP_Post as array in /path/to/your-file.php: Line X
+```
+
+Solution:
+
+To fix this error, you should use object notation (`$post->post_title`) to access the `'post_title'` property correctly:
+
+```php
+function get_post_title_by_id($post_id) {
+    $post = get_post($post_id);
+    
+    if (is_a($post, 'WP_Post')) {
+        $title = $post->post_title; // Use object notation to access post_title
+        return $title;
+    } else {
+        return 'Post not found';
+    }
+}
+
+// Call the function with a non-existent post ID (handled gracefully)
+$post_title = get_post_title_by_id(9999);
+echo $post_title;
+```
+
+By using `$post->post_title`, we correctly access the `'post_title'` property of the `$post` object and avoid triggering an error. We also added a conditional check using `is_a()` to ensure that the `$post` variable is an instance of the `WP_Post` class before attempting to access its properties.
+
+Now, when calling the `get_post_title_by_id()` function with a non-existent post ID, the output will be:
+
+```
+Post not found
+```
+
+This approach ensures that your code handles potential errors gracefully and provides informative responses when encountering unexpected scenarios.

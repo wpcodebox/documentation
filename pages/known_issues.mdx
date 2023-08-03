@@ -1,0 +1,57 @@
+# Known issues in WPCodeBox 2 v1.0.3
+
+### Cannot update hook priority when writing PHP Snippets
+
+A JS error is thrown when trying to update the hook priority when writing PHP snippets. When trying
+to update the hook priority, the number doesn't change.
+This is a known issue and will be fixed in the next release.
+
+### Error triggered if you have XML code in a php snippet, like this
+
+```php
+<?php
+
+// This is a PHP snippet with XML code
+$xml = '<?xml version="1.0" encoding="UTF-8" ?>';
+
+```
+
+Solution: 
+
+To fix the error, at this at the end of your snippet:
+
+// {'<?php'}
+
+Your snippet would look like this:
+```php
+<?php
+
+// This is a PHP snippet with XML code
+$xml = '<?xml version="1.0" encoding="UTF-8" ?>;
+
+// <?php
+```
+
+### Blank screen when enabling the functionality plugin and removing WPCodeBox 2
+
+If you enable the functionality plugin and then remove WPCodeBox 2, you will get a blank screen. This is caused by the autoreload code
+from withing the FP, a fix is available in the next release
+
+### Error in the logs when activating WPCodeBox 2 for the first time
+
+When you activate WPCodeBox 2 for the first time, you might see this error in your logs:
+```
+WordPress database error Server shutdown in progress for query SELECT * FROM wp_wpcb_snippets WHERE id = 1 made by require('wp-blog-header.php'), require_once('wp-load.php'), require_once('wp-config.php'), require_once('wp-settings.php'), include_once('/plugins/wpcodebox2/wpcodebox2.php'), Wpcb2\Service\WPCodeBox2->executeSnippets, Wpcb2\Runner\QueryRunner->runQueries, eval, Wpcb2\ConditionBuilder\ShouldExecute::should_execute, Wpcb2\ConditionBuilder\ShouldExecute->shouldExecute, Wpcb2\Repository\SnippetRepository->getSnippet"
+```
+
+This happens because WPCodeBox 2 is trying to execute the snippets before the custom tables are created. It doesn't impede in anyway the functionality of the plugin.
+
+I am looking for a fix that would not require extra DB queries on each request to handle this edge case.
+
+### Minification of CSS snippets might remove quotes in some cases
+
+With the more exotic CSS properties, minification might remove quotes in some cases. If this happens, you can add the respective properties to an unminified CSS file.
+
+### You cannot include a SCSS partial in another SCSS partial
+
+This is a known limitation of the SCSS compiler. You cannot include _partial2 in _partial2. You would need to include both _partial1 and _partial2 in the SCSS file where you want to use the variables from _partial2.

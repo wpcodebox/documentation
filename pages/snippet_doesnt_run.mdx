@@ -1,0 +1,74 @@
+import Link from 'next/link'
+import { Callout } from 'nextra-theme-docs'
+
+# Troubleshooting a snippet that doesn't run
+
+The first thing to check if a snippet doesn't run is to make sure that the snippet is enabled.
+You can do this by selecting the snippet and checking the "Enabled" toggle in the upper left corner of the editor.
+
+You also need to check if you have the correct snippet type selected. <Link href="/snippet_types" style={{textDecoration: 'underline'}}>Read more about the supported snippet types and when to use them.</Link>
+
+
+
+## A PHP Snippet doesn't run
+
+### The conditions you use can't be evaluated for the selected hook
+When using conditions, not all conditions can be evaluated in all hooks. For example, the `plugins_loaded` hook is triggered before the current post type is known.
+
+For frontend pages, the current post type is only known after the `wp` hook is triggered. So if you use a condition that checks the current post type on the `plugins_loaded` hook, it will always return false.
+
+<Callout type="info" emoji="️ℹ️">
+    If you use conditions in a PHP Snippet, the `wp` hook is the best hook to use.
+</Callout>
+
+### You add an action in your code using the `add_action` function, but that action already fired
+
+If you use the `add_action` function in your code, make sure that the action you add hasn't already fired. If it has, your code won't run.
+For example, if you add this code snippet:
+
+```php
+<?php
+
+add_action('plugins_loaded', function() {
+    echo 'Hello world';
+});
+```
+And select the `plugins_loaded` hook in the WPCodeBox UI, the snippet won't run. Because our code executes when `plugins_loaded` is triggered, so we add the hook for `plugins_loaded` too late.
+
+A solution here would be to use an earlier hook, like 'Root'.
+
+<Callout type="info" emoji="️ℹ️">
+    If adding an action using the `add_action` function, make sure you select an earlier hook in the WPCodeBox UI. `root` and `plugins_loaded` should be the safest.
+</Callout>
+
+
+### Wrong hook selected
+If a PHP Snippet doesn't run, it's most likely because you have the wrong hook selected for the snippet.
+
+If the hook isn't triggered you snippet won't run. For example, the `woocommerce_before_add_to_cart_button` hook is only triggered on the single product page. If you add a snippet with this hook to the cart page, it won't run.
+
+## A CSS/SCSS/JS/HTML Snippet doesn't run
+
+### Confusion between JS and HTML snippets
+The most common reason why a JS snippet doesn't run, is because there is confusion between JS and HTML snippets.
+If your code looks like this (notice the {'<script> </script>'}tags:
+
+```html
+<script>
+    console.log('Hello world');
+</script>
+```
+
+Then you need to select the HTML snippet type, not the JS snippet type. Because this code is JS code embedded in HTML.
+
+If you select the JS snippet, your code should look like this:
+
+```js
+console.log('Hello world');
+```
+
+### Conditions aren't met
+Another reason that might cause a snippet to not run, is that conditions aren't met.
+Double-check you have the correct snippet type selected according to your code, and make sure the conditions are met on the page where you want the snippet to run.
+
+

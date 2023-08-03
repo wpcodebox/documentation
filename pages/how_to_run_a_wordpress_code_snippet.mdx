@@ -1,0 +1,22 @@
+How to run a WordPress code snippet
+===================================
+
+WPCodeBox has two main ways in which it can run a WordPress code snippet: automatic and manual.
+
+Run a code snippet automatically
+--------------------------------
+
+This is the default way WPCodeBox will run a code snippet. When you run a code snippet automatically, the snippet will run on page load, according to conditions set by the "Where to run" option. 
+
+For example, you can run a code snippet automatically on the home page, on a specific page, or on the WordPress frontend or admin. Each time that page will load, the snippet will run. This is the only option available for CSS/SCSS/LESS and JS scripts. 
+
+This is useful, for example, when you want to modify the WooCommerce checkout page, you would create a code snippet that would run automatically on the WooCommerce checkout page and modify its behavior. This is also helpful when you want to add tracking codes like Google Tag Manager, or Facebook Pixel to your WordPress site. In this case, you would set the snippet to run everywhere on the frontend.
+
+Run a code snippet manually
+---------------------------
+
+This is a unique feature of WPCodeBox, and it allows you to run a code snippet on demand. These snippets won't run until you click the run button above the editor. You can also see the output of these snippets below the editor window. 
+
+This option is only available for PHP Code Snippets. It is really useful when you want to run some code in the context of WordPress, for example, run a query against the database, or test a piece of code in the context of WordPress. For example, the snippet below will run a query to find the unused tags, and then it will display them in the output pane below the editor:
+
+![](https://wpcodebox.b-cdn.net/wp-content/uploads/2021/07/wordpress-code-snippets-run-snippets-once.png)
