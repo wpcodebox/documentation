@@ -92,3 +92,24 @@ The time condition allows you to select a time before or after the snippet will 
 ### Day Of The Week
 
 This condition allows you to only run the current snippet on specific weekdays. So, for example, you can show a banner that the store is open only from Monday to Friday.
+
+
+
+## Examples
+#### Run a snippet on the product page and on the checkout page
+ - Current Post Type Is "Product"
+ - OR Current Post Is Checkout
+
+#### Run a snippet on the product page when the user is logged in
+ - Current Post Type Is "Product"
+ - AND Current User Logged-In Status Is Logged In
+
+#### Run a snippet if we're on a single page and that page has an excerpt
+ - Custom PHP Condition Is True
+```php
+is_singular() && has_excerpt();
+```
+
+#### Run a snippet if the page URL does not contain a string
+ - Page URL Does Not Contain "checkout"
+
