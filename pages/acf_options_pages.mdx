@@ -1,1 +1,17 @@
-# Add Google Tag Manager to WordPress using WPCodeBox
+# Register an ACF Options Page using WPCodeBox
+
+To register an ACF Options Page, you need to create a new snippet, and leave all its settings to the default values.
+
+Then, you need to add the following code to the snippet:
+
+```php copy
+<?php
+
+if( function_exists('acf_add_options_page') ) {
+
+    acf_add_options_page();
+
+}
+```
+
+Then, you need to save the snippet and enable it, and you will see the ACF Options Page in the WordPress admin menu.
