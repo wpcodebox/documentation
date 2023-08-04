@@ -55,3 +55,6 @@ With the more exotic CSS properties, minification might remove quotes in some ca
 ### You cannot include a SCSS partial in another SCSS partial
 
 This is a known limitation of the SCSS compiler. You cannot include _partial2 in _partial2. You would need to include both _partial1 and _partial2 in the SCSS file where you want to use the variables from _partial2.
+
+### Format code doesn't work for SCSS Partials
+The format code button has an issue with SCSS partials. For now, if you need to format a SCSS partial, you can create a temporary SCSS snippet and use that for formatting.
