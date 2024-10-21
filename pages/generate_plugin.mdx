@@ -1,1 +1,41 @@
-Coming soon
+Generating a Plugin from WPCodeBox
+==================================
+
+WPCodeBox allows you to generate standalone plugins based on selected code snippets. This feature is ideal when you want to package specific functionality into a plugin that does not depend on WPCodeBox for management.
+
+Key Features
+------------
+
+-   **Standalone Plugin Creation:** Create a new plugin by selecting the snippets you want to include. The resulting plugin is independent of WPCodeBox.
+-   **Selective Snippet Packaging:** Choose which snippets to include in the generated plugin for fine-grained control over the functionality provided by your plugin.
+-   **Avoiding Conflicts:** Do not activate the generated plugin on a site where the same snippets are already running in WPCodeBox, as this could cause conflicts or errors.
+
+How to Generate a Plugin
+------------------------
+
+1.  **Click on "Generate Plugin":**
+-   Click on the "Generate Plugin" option above the snippet list.
+2.  **Select Snippets in WPCodeBox:**
+-   Choose the snippets you want to include in the plugin.
+3.  **Download and Install the Plugin:**
+-   Download the generated plugin ZIP file and install it on the desired WordPress site.
+4.  **Activate the Plugin:**
+-   Activate the plugin through the WordPress admin panel. Make sure WPCodeBox is not running the same snippets to avoid conflicts.
+
+Best Practices
+--------------
+
+-   **Test the Generated Plugin Separately:** Before using it on a live site, test the generated plugin in a staging environment.
+-   **Avoid Duplicate Snippets:** Do not activate the generated plugin on sites where WPCodeBox is managing the same snippets, as it can lead to conflicts.
+-   **Document Changes Manually:** Since the generated plugin is not editable with WPCodeBox, any further changes will need to be made directly in the plugin's code.
+
+
+Differences Between Generated Plugins and the Functionality Plugin
+------------------------------------------------------------------
+
+-   **Functionality Plugin:**
+-   Allows continued management of snippets through WPCodeBox and keeps snippets running even if WPCodeBox is deactivated.
+-   Snippet changes made in WPCodeBox will be reflected in the FP.
+-   **Generated Plugins:**
+-   Are standalone and independent of WPCodeBox.
+-   Cannot be edited or updated through WPCodeBox after generation.

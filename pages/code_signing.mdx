@@ -1,1 +1,9 @@
-Coming soon
+### Code Signing and Signatures in the WPCodeBox Functionality Plugin
+
+When using the WPCodeBox Functionality Plugin, code signing ensures the integrity of your snippets. Here's how it works:
+
+-   **Signatures File (`signatures.php`):** The Functionality Plugin generates a `signatures.php` file containing a hash (signature) for each snippet. This hash is based on the snippet's code, providing a unique identifier that reflects the snippet's content.
+-   **Integrity Verification:** WPCodeBox checks the signatures in the `signatures.php` file against the actual code snippets in the database. If a discrepancy is found (e.g., a snippet is modified directly in the database), WPCodeBox will notify you about the change.
+-   **Protection Against Unauthorized Changes:** This mechanism ensures that any changes made outside WPCodeBox (such as direct database edits) are detected, helping to secure your site's custom functionality.
+
+The signatures help maintain trust and stability, alerting you to any potential issues with your code snippets.
