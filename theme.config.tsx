@@ -22,15 +22,24 @@ const config: DocsThemeConfig = {
             <link rel="icon" type="image/png" sizes="32x32" href="/favicon.svg"/>
             <link rel="icon" type="image/png" sizes="16x16" href="/favicon.svg"/>
 
-            <script async src="https://www.googletagmanager.com/gtag/js?id=G-V63156T8EJ"></script>
-            <script id="google-analytics" >
-                window.dataLayer = window.dataLayer || [];
+
+            <Script
+                strategy="afterInteractive"
+                src={'https://www.googletagmanager.com/gtag/js?id=G-V63156T8EJ'}
+            />
+            <Script
+                id="gtag-init"
+                strategy="afterInteractive"
+                dangerouslySetInnerHTML={{
+                    __html: `
+              window.dataLayer = window.dataLayer || [];
                 function gtag() { dataLayer.push( arguments ); }
                 gtag( 'js', new Date() );
 
                 gtag( 'config', 'G-V63156T8EJ' );
-
-            </script>
+        `,
+                }}
+            />
         </>
     ),
     useNextSeoProps() {
