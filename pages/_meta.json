@@ -29,6 +29,11 @@
   "code_snippets_repository": "The WordPress Code Snippets Repository",
   "generate_plugin": "Generate a WordPress Plugin from your snippets",
   "code_signing": "Code Signing and Security",
+  "quick_actions": "Quick Actions",
+  "cdnjs_integration": "CDNJS Integration",
+  "wordpress_autocomplete": "WordPress Auto-Complete",
+  "anonymous_function": "Generate an Anonymous Function",
+  "documentation_in_editor": "Documentation in Editor",
   "--howtos": {
     "type": "separator",
     "title": "How To's"
@@ -38,7 +43,9 @@
   "acf_options_pages": "Add an ACF Options Page",
   "display_acf_field_in_a_shortcode" : "Display an ACF Field in a Shortcode",
   "target_oxygen_builder": "How to target the Oxygen Builder UI using the Condition Builder",
-
+  "add_external_js_code": "How to add external JS code to your WordPress site",
+  "add_external_css_code": "How to add external CSS code to your WordPress site",
+  "woocommerce_hooks_insertion_points": "How to run your code on a specific WooCommerce hook or action",
   "--troubleshooting": {
     "type": "separator",
     "title": "Troubleshooting"
@@ -53,12 +60,6 @@
     "title": "Get WPCodeBox",
     "type": "page",
     "href": "https://wpcodebox.com",
-    "newWindow": true
-  },
-  "v1_docs": {
-    "title": "WPCodeBox v1 Documentation",
-    "type": "page",
-    "href": "https://wpcodebox.com/documentation",
     "newWindow": true
   }
 }

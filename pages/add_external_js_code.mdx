@@ -1,0 +1,16 @@
+import Image from 'next/image'
+
+How to add external JS code to your WordPress site
+===============================================================
+
+WPCodeBox makes it easy to add external JS code to your site. This is useful when you want to include 3rd party libraries from external CDNs.
+
+To enqueue external JS code, we are going to select "JavaScript (External File)" as the type when creating a snippet.
+
+Then, you can input the URL to your external JS file under "External JS File URL":
+
+<Image src="/images/js_external_file.png" width={400} height={200} style={{marginTop: 15}} />
+
+You can also change here the script tag options, to define how the script loads, and then set it to run on the page where you need the external JS code to be included.
+
+If you need to add a snipept from CDNJS, you can use our CDNJS integration feature. See [CDNJS Integration](/cdnjs_integration) for more details.

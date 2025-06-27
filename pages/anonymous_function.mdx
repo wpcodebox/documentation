@@ -1,0 +1,18 @@
+import Image from 'next/image'
+
+### Generates Anonymous Function
+
+When adding filters and functions, you can automatically generate an anonymous function with the correct parameters and return types
+
+This is done by choosing the "Anonymous Function" option when typing either a filter or a function in WPCodeBox, see:
+
+<Image src='/images/enabling_anonymous_function.png' width={1045} height={338} />
+
+Once you click that option, WPCodeBox will automatically generate the anonymous function with all the required parameters:
+
+```php
+add_filter('the_title', function( $title, $id ) {
+    
+    return $title;
+}, 10, 2 
+```
