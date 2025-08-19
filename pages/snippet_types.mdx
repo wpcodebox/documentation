@@ -1,10 +1,10 @@
 import { Callout } from 'nextra-theme-docs'
 
-# Snippet Types and how to select the right one
+## Snippet Types and how to select the right one
 
 WPCodeBox, the WordPress Code Snippets Manager, offers a comprehensive range of supported snippet types to enhance the functionality and design of your WordPress website. This documentation page aims to guide users in choosing the appropriate snippet type for their specific needs. WPCodeBox supports the following snippet types:
 
-1. **PHP Snippets**
+### PHP Snippets
 
 **Description:** PHP snippets allow you to inject custom PHP code directly into your WordPress website. This powerful snippet type enables you to extend the functionality of your themes or plugins without the need to modify their core files.
 
@@ -24,7 +24,7 @@ function custom_hello_message() {
 add_action('wp_footer', 'custom_hello_message');
    ```
 
-2. **CSS Snippets**
+### CSS Snippets
 
 **Description:** CSS snippets allow you to apply custom styles to elements on your WordPress site. With this snippet type, you can easily personalize the appearance and layout of your website without directly editing theme files.
 
@@ -46,7 +46,7 @@ add_action('wp_footer', 'custom_hello_message');
 }
    ```
 
-3. **SCSS/LESS Snippets**
+### SCSS/LESS Snippets
 
 **Description:** SCSS/LESS snippets are used for more advanced CSS styling. They support the SCSS (Sass) and LESS preprocessors, which offer additional features like variables, nesting, and mixins to make your stylesheets more maintainable and organized.
 
@@ -65,7 +65,7 @@ $primary-color: #007bff;
 }
    ```
 
-4. **JavaScript (JS) Snippets**
+### JavaScript (JS) Snippets
 
 **Description:** JavaScript snippets enable you to add custom client-side scripts to your WordPress website. By leveraging JS snippets, you can introduce interactive features and dynamic behavior to your site.
 
@@ -90,7 +90,7 @@ document.getElementById('load-more-button').addEventListener('click', function()
     If your snippet has script tags in it, like {'<script></script>'} or {'<script type="text/javascript"></script>'}, or {'<script src="https://example.com/script.js"><script>'} then you should use the HTML snippet type.
 </Callout>
 
-5. **HTML Snippets**
+### HTML Snippets
 
 **Description:** HTML snippets allow you to add custom HTML code to your WordPress website. They are particularly useful for adding custom elements, forms, or structuring content.
 
@@ -106,7 +106,7 @@ document.getElementById('load-more-button').addEventListener('click', function()
 </div>
    ```
 
-6. **TXT Snippets**
+### TXT Snippets
 
 **Description:** TXT snippets are used for notes and other non-executable content. They are purely for informational purposes and do not affect the functionality of your website.
 
