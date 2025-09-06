@@ -2,7 +2,9 @@ import { Callout } from 'nextra-theme-docs'
 
 ## Dealing with Snippet Errors in WPCodeBox
 
-In most cases, WPCodeBox can detect if a snippet triggers an error and it will disable it automatically. If a snippet is disabled due to an error, it will be colored red in WPCodeBox, and the error message will be displayed above the editor. At this point, you have the option to dismiss the error, fix the issue and re-enable the snippet.
+In most cases, WPCodeBox can detect if a snippet triggers an error and it will disable it automatically. If a snippet is disabled due to an error, it will be colored red in WPCodeBox, and the error message will be displayed above the editor. You can also see the error using [WP Debug Toolkit](https://wpdebugtoolkit.com/), the best tool to handle error logs and troubleshooting. We partnered with them to offer a discount using code __WPCBDOC__ on your first purchase.
+
+At this point, you have the option to dismiss the error, fix the issue and re-enable the snippet.
 
 However, in rare cases, a snippet may cause an error that is not caught by WPCodeBox, leading to being locked out of the site. In such cases, you can disable snippet execution by adding the following code to your `wp-config.php` file:
 
